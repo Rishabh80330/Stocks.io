@@ -1,146 +1,136 @@
-# Stocks<span/>.io Trading Platform
+# 📈 Stocks.io - Stock Brokerage Platform Clone
 
-## Overview
+A modern full-stack stock trading platform inspired by **Zerodha**, built using the MERN stack with GraphQL and real-time market data.  
 
-Stock<span/>.io is a trading and investment simulation platform developed with the [MERN](https://www.mongodb.com/mern-stack) stack and utilizing [Socket.io](https://socket.io/) for real time price updates. It is only a dummy portfolio project and does not represent real stock values or transactions. This idea for this project was inspired by [Jacky Tea](https://github.com/JackyTea), who created a similar application.
+Users can view real-time stock prices, buy/sell stocks, manage portfolios, and track transactions — all within an elegant, responsive UI.
 
-## Table of Contents
+---
 
-- [Stack](#stack)<br/>
-- [Data](#data)<br/>
-- [Development](#development)<br/>
-- [Screenshots](#screenshots)<br/>
+## 🚀 Features
 
-## Stack
+- 🔐 **User Authentication** – Secure login & signup
+- 📊 **Real-Time Stock Prices** – Live market data with WebSockets
+- 💼 **Portfolio Management** – View owned stocks, values, and changes
+- 💸 **Buy & Sell Stocks** – Seamless transaction execution
+- 📈 **Dynamic Price Charts** – Track performance of individual stocks
+- 🌗 **Dark Mode** toggle
+- 📱 **Responsive UI** for desktop and mobile
 
-This project was developed with the MERN stack along with TypeScript, a GraphQL API, Socket.io and JWT for authentication.
+---
 
-**Front-End**
+## 🛠️ Tech Stack
 
-- React
-- Redux
-- TypeScript
-- TailwindCSS, SASS
-- Framer-Motion
-- Apollo GraphQL Client
-- ChartJS
+### Frontend
+- **React.js + TypeScript**
+- **Tailwind CSS** – Modern styling
+- **Redux Toolkit** – State management
+- **GraphQL Codegen** – Auto-generates queries & mutations
+- **Vite** – Lightning-fast bundler
 
-**Back-End**
+### Backend
+- **Node.js + Express.js**
+- **TypeScript**
+- **GraphQL (Apollo Server)**
+- **MongoDB + Mongoose** – NoSQL DB for storing users, stocks, and transactions
+- **JWT Authentication**
+- **Socket.IO** – For live stock price updates
 
-- Node.js
-- Express.js
-- TypeScript
-- Mongoose
-- Apollo GraphQL
-- Socket<span/>.io
-- JWT
+---
 
-**Database**
+## 🖼️ Screenshots
 
-- MongoDB Atlas
+### 🏠 Home Page
+![Home](./misc/Home-Page.png)
 
-## Data
+### 📈 Market Page
+![Market](./misc/Market-Page.png)
 
-The general stock data in this project was generated with [Mockaroo](https://www.mockaroo.com/) and filled in manually.
+### 💰 Portfolio Page
+![Portfolio](./misc/Account-Page.png)
 
-**Stock**
+### 📄 Stock Details Page
+![Stock](./misc/Stock-Page.png)
 
-This project uses [JSON](https://www.json.org/json-en.html) to represent stock data in the form of:
+---
 
-```json
-[
-  {
-    "_id": "ObjectId",
-    "ticker": "String",
-    "exchange": "String",
-    "name": "String",
-    "price": 0.00,
-    "currency": "String",
-    "ipo": "String",
-    "country": "String",
-    "logo": "URL",
-    "weburl": "URL",
-  }
-]
-```
+## 📂 Folder Structure
 
-The [schema](https://mongoosejs.com/docs/guide.html) of this model can be found in [`/server/models/Stock.ts`](https://github.com/roynulrohan/Stocks.io/blob/master/server/models/Stock.ts)
+Stocks.io/
+├── client/ # React frontend
+│ ├── src/
+│ ├── public/
+│ ├── components/
+│ └── pages/
+├── server/ # Node.js + GraphQL backend
+│ ├── models/
+│ ├── graphql/
+│ └── sockets/
+├── misc/ # Screenshots
+├── docker-compose.yml
+└── README.md
 
-## Development
+yaml
+Copy
+Edit
 
-To run this application locally, you will need the following prerequisite programs:
 
-- [Node.JS and NPM](https://nodejs.org/en/)
-- [Create React App](https://github.com/facebook/create-react-app)
-- [MongoDB Atlas](https://www.mongodb.com/)
+---
 
-**Server Setup**
+## ⚙️ Local Setup Instructions
 
-First, install the necessary packages via:
-
-```
-npm i
-```
-
-Then, setup the `.env` file in the root of the `/server` directory. (**Note**: this will be gitignored)
+### 1. Clone the Repo
 
 ```bash
-# mongo username
-MONGO_USER
+git clone https://github.com/Rishabh80330/Stocks.io.git
+cd Stocks.io
 
-# mongo password
-MONGO_PASSWORD
+2. Install Client Dependencies
+cd client
+npm install
+3. Install Server Dependencies
+bash
+Copy
+Edit
+cd ../server
+npm install
+4. Start the Development Servers
+Frontend (Client)
 
-# mongo db name
-MONGO_DB
+bash
+Copy
+Edit
+cd ../client
+npm run dev
+Backend (Server)
 
-# JWT secret
-JWT_SECRET
+bash
+Copy
+Edit
+cd ../server
+npm run start
+🌐 Live Demo
+(Coming soon — can be deployed on Vercel or Render)
 
-# optional: port
-PORT
-```
+📜 License
+This project is licensed under the MIT License.
 
-Now you can run the server. Default port is `4000`.
+🙋‍♂️ Author
+Rishabh Agrawal
+🔗 LinkedIn
+📧 Email
+
+yaml
+Copy
+Edit
+
+---
+
+### ✅ To Use:
+1. Copy the content into your project’s `README.md` file.
+2. Replace `"your.email@example.com"` if you want to add your email.
+3. Once saved, `git add README.md`, commit, and push it:
 
 ```bash
-# start server
-node .
-
-# or
-npm start
-```
-
-**Client Setup**
-
-First, install the necessary packages via:
-
-```
-npm i
-```
-
-(Optional) Setup the `.env` file in the root of the `/client` directory. (**Note**: this will be gitignored)
-
-```bash
-# URI of API server along with the port
-# eg. http://localhost:4000
-REACT_APP_API_URI
-```
-
-Now you can run the clientproject.
-
-```bash
-# start react app
-npm start
-```
-
-## Screenshots
-
-Home Page
-![](misc/Home-Page.png)
-Market Page
-![](misc/Market-Page.png)
-Stock Page
-![](misc/Stock-Page.png)
-Account Page
-![](misc/Account-Page.png)
+git add README.md
+git commit -m "Add professional README"
+git push origin main
